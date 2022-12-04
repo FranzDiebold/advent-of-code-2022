@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,scala
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,visualstudiocode,scala
+# Created by https://www.toptal.com/developers/gitignore/api/macos,scala,visualstudiocode,sbt
+# Edit at https://www.toptal.com/developers/gitignore?templates=macos,scala,visualstudiocode,sbt
 
 ### macOS ###
 # General
@@ -34,6 +34,23 @@ Temporary Items
 # iCloud generated files
 *.icloud
 
+### SBT ###
+# Simple Build Tool
+# http://www.scala-sbt.org/release/docs/Getting-Started/Directories.html#configuring-version-control
+
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
+
+### SBT Patch ###
+.bsp/
+
 ### Scala ###
 *.class
 *.log
@@ -57,7 +74,6 @@ hs_err_pid*
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
-.history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,visualstudiocode,scala
+# End of https://www.toptal.com/developers/gitignore/api/macos,scala,visualstudiocode,sbt
