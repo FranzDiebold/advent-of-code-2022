@@ -41,6 +41,8 @@ object Day01 {
   }
 
   def main(args: Array[String]): Unit = {
+    println("Day 1:")
+
     val resultOne = partOne()
     println(f"The result for part 1 is: $resultOne")
 
