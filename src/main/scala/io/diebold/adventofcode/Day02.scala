@@ -1,11 +1,12 @@
 package io.diebold.adventofcode
 
+import io.diebold.adventofcode.Puzzle
 import io.diebold.util.FileReader
 
-object Day02 {
-  enum RockPaperScissorsShape:
-    case Rock, Paper, Scissors
+enum RockPaperScissorsShape:
+  case Rock, Paper, Scissors
 
+object Day02 extends Puzzle[(RockPaperScissorsShape, String), Int] {
   def decodeFirstColumn(encodedShape: String): RockPaperScissorsShape = {
     encodedShape match
       case "A" => RockPaperScissorsShape.Rock
@@ -66,10 +67,6 @@ object Day02 {
       .sum
   }
 
-  def partOne(): Int = {
-    solveOne(readInput())
-  }
-
   def solveTwo(input: Iterator[(RockPaperScissorsShape, String)]): Int = {
     def getResponseShape(
         opponentShape: RockPaperScissorsShape,
@@ -94,19 +91,5 @@ object Day02 {
       )
       .map(getScore)
       .sum
-  }
-
-  def partTwo(): Int = {
-    solveTwo(readInput())
-  }
-
-  def main(args: Array[String]): Unit = {
-    println("Day 2:")
-
-    val resultOne = partOne()
-    println(f"The result for part 1 is: $resultOne")
-
-    val resultTwo = partTwo()
-    println(f"The result for part 2 is: $resultTwo")
   }
 }

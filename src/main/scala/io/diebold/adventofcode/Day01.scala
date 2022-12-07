@@ -1,8 +1,9 @@
 package io.diebold.adventofcode
 
+import io.diebold.adventofcode.Puzzle
 import io.diebold.util.FileReader
 
-object Day01 {
+object Day01 extends Puzzle[Seq[Int], Int] {
   def splitIterator[T](iter: Iterator[T], separator: T) = new Iterator[Seq[T]] {
     def hasNext = iter.hasNext
     def next()  = iter.takeWhile(_ != separator).toSeq
@@ -23,10 +24,6 @@ object Day01 {
       .max
   }
 
-  def partOne(): Int = {
-    solveOne(readInput())
-  }
-
   def solveTwo(input: Iterator[Seq[Int]]): Int = {
     input
       .map(_.sum)
@@ -34,19 +31,5 @@ object Day01 {
       .sortWith(_ > _)
       .take(3)
       .sum
-  }
-
-  def partTwo(): Int = {
-    solveTwo(readInput())
-  }
-
-  def main(args: Array[String]): Unit = {
-    println("Day 1:")
-
-    val resultOne = partOne()
-    println(f"The result for part 1 is: $resultOne")
-
-    val resultTwo = partTwo()
-    println(f"The result for part 2 is: $resultTwo")
   }
 }
