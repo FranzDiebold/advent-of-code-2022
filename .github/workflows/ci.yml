@@ -12,7 +12,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: microsoft
-        java-version: 18
+        java-version: 17
     - name: Install make
       run: apt-get update && apt-get install make
     - name: Test
