@@ -1,6 +1,14 @@
 package io.diebold.adventofcode
 
+import io.diebold.util.FileReader
+
 trait Puzzle[I, O] {
+  val day = this.getClass.getSimpleName().stripSuffix("$")
+
+  def readRawInput(): Iterator[String] = {
+    FileReader.readInput(day)
+  }
+
   def readInput(): Iterator[I]
 
   def solveOne(input: Iterator[I]): O
@@ -16,7 +24,7 @@ trait Puzzle[I, O] {
   }
 
   def main(args: Array[String]): Unit = {
-    println("Puzzle:")
+    println(day)
 
     val resultOne = partOne()
     println(f"The result for part 1 is: $resultOne")

@@ -1,12 +1,10 @@
 package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
-import io.diebold.util.FileReader
 
 object Day03 extends Puzzle[String, Int] {
   def readInput(): Iterator[String] = {
-    FileReader
-      .readInput(3)
+    readRawInput()
   }
 
   def getPriority(item: Char): Int = item.toInt - (if (item.isUpper) 38 else 96)

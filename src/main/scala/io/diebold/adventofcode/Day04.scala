@@ -1,12 +1,10 @@
 package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
-import io.diebold.util.FileReader
 
 object Day04 extends Puzzle[((Int, Int), (Int, Int)), Int] {
   def readInput(): Iterator[((Int, Int), (Int, Int))] = {
-    FileReader
-      .readInput(4)
+    readRawInput()
       .map(_.split(",").map(_.split("-").map(_.toInt)))
       .map((sectionAssignments: Array[Array[Int]]) =>
         (

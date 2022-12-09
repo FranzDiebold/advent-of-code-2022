@@ -1,7 +1,6 @@
 package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
-import io.diebold.util.FileReader
 
 object Day01 extends Puzzle[Seq[Int], Int] {
   def splitIterator[T](iter: Iterator[T], separator: T) = new Iterator[Seq[T]] {
@@ -10,8 +9,7 @@ object Day01 extends Puzzle[Seq[Int], Int] {
   }
 
   def readInput(): Iterator[Seq[Int]] = {
-    val rawInput = FileReader
-      .readInput(1)
+    val rawInput = readRawInput()
       .map(_.toIntOption)
 
     splitIterator(rawInput, None)

@@ -1,7 +1,6 @@
 package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
-import io.diebold.util.FileReader
 
 enum RockPaperScissorsShape:
   case Rock, Paper, Scissors
@@ -15,8 +14,7 @@ object Day02 extends Puzzle[(RockPaperScissorsShape, String), Int] {
   }
 
   def readInput(): Iterator[(RockPaperScissorsShape, String)] = {
-    FileReader
-      .readInput(2)
+    readRawInput()
       .map(_.split(" "))
       .map((encodedColumns: Array[String]) =>
         (decodeFirstColumn(encodedColumns(0)), encodedColumns(1))
