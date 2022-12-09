@@ -1,18 +1,15 @@
 package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
+import io.diebold.util.SplitIterator
 
 object Day01 extends Puzzle[Iterator[Seq[Int]], Int] {
-  def splitIterator[T](iter: Iterator[T], separator: T) = new Iterator[Seq[T]] {
-    def hasNext = iter.hasNext
-    def next()  = iter.takeWhile(_ != separator).toSeq
-  }
-
   def readInput(): Iterator[Seq[Int]] = {
     val rawInput = readRawInput()
       .map(_.toIntOption)
 
-    splitIterator(rawInput, None)
+    SplitIterator
+      .split(rawInput, None)
       .map(_.flatten)
   }
 
