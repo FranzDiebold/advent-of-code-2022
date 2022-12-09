@@ -2,7 +2,7 @@ package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
 
-object Day01 extends Puzzle[Seq[Int], Int] {
+object Day01 extends Puzzle[Iterator[Seq[Int]], Int] {
   def splitIterator[T](iter: Iterator[T], separator: T) = new Iterator[Seq[T]] {
     def hasNext = iter.hasNext
     def next()  = iter.takeWhile(_ != separator).toSeq

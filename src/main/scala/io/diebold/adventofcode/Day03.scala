@@ -2,7 +2,7 @@ package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
 
-object Day03 extends Puzzle[String, Int] {
+object Day03 extends Puzzle[Iterator[String], Int] {
   def readInput(): Iterator[String] = {
     readRawInput()
   }

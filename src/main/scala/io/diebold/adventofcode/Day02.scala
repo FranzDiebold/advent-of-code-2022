@@ -5,7 +5,7 @@ import io.diebold.adventofcode.Puzzle
 enum RockPaperScissorsShape:
   case Rock, Paper, Scissors
 
-object Day02 extends Puzzle[(RockPaperScissorsShape, String), Int] {
+object Day02 extends Puzzle[Iterator[(RockPaperScissorsShape, String)], Int] {
   def decodeFirstColumn(encodedShape: String): RockPaperScissorsShape = {
     encodedShape match
       case "A" => RockPaperScissorsShape.Rock

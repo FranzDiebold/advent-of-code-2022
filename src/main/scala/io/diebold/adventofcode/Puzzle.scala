@@ -9,15 +9,15 @@ trait Puzzle[I, O] {
     FileReader.readInput(day)
   }
 
-  def readInput(): Iterator[I]
+  def readInput(): I
 
-  def solveOne(input: Iterator[I]): O
+  def solveOne(input: I): O
 
   def partOne(): O = {
     solveOne(readInput())
   }
 
-  def solveTwo(input: Iterator[I]): O
+  def solveTwo(input: I): O
 
   def partTwo(): O = {
     solveTwo(readInput())

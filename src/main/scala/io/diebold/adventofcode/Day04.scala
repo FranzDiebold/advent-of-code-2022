@@ -2,7 +2,7 @@ package io.diebold.adventofcode
 
 import io.diebold.adventofcode.Puzzle
 
-object Day04 extends Puzzle[((Int, Int), (Int, Int)), Int] {
+object Day04 extends Puzzle[Iterator[((Int, Int), (Int, Int))], Int] {
   def readInput(): Iterator[((Int, Int), (Int, Int))] = {
     readRawInput()
       .map(_.split(",").map(_.split("-").map(_.toInt)))
