@@ -1,7 +1,5 @@
 package io.diebold.adventofcode
 
-import scala.collection.mutable.Stack
-
 import io.diebold.adventofcode.Puzzle
 
 object Day06 extends Puzzle[Seq[Char], Int] {
