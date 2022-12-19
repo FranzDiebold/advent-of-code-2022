@@ -12,7 +12,7 @@ case class Directory(
     parentDirectory: Option[Directory],
     childDirectories: HashMap[String, Directory],
     files: HashMap[String, File],
-    var totalSize: Int
+    var totalSize: Int // scalafix:ok DisableSyntax.var
 )
 
 object Day07 extends Puzzle[Iterator[String], Int] {
@@ -97,7 +97,7 @@ object Day07 extends Puzzle[Iterator[String], Int] {
           end if
           buildFileSystemTreeRec(input, rootDirectory, currentDirectory)
         }
-        case null | _ => buildFileSystemTreeRec(input, rootDirectory, currentDirectory)
+        case _ => buildFileSystemTreeRec(input, rootDirectory, currentDirectory)
     else rootDirectory
     end if
   }
