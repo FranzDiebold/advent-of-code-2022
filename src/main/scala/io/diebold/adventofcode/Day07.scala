@@ -21,9 +21,9 @@ object Day07 extends Puzzle[Iterator[String], Int] {
   val changeDirectoryRootRegex: Regex = """^\$ cd /$""".r
   val changeDirectoryInRegex: Regex   = """^\$ cd (\w+)$""".r
   val changeDirectoryOutRegex: Regex  = """^\$ cd \.\.$""".r
-  var listRegex: Regex                = """^\$ ls$""".r
-  var fileRegex: Regex                = """^(\d+) ([\w.]+)$""".r
-  var directoryRegex: Regex           = """^dir (\d+)$""".r
+  val listRegex: Regex                = """^\$ ls$""".r
+  val fileRegex: Regex                = """^(\d+) ([\w.]+)$""".r
+  val directoryRegex: Regex           = """^dir (\d+)$""".r
 
   def readInput(): Iterator[String] = {
     readRawInput()
