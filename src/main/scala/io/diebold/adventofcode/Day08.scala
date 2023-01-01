@@ -2,9 +2,9 @@ package io.diebold.adventofcode
 
 import scala.annotation.tailrec
 import scala.math.max
+import scala.runtime.Arrays
 
 import io.diebold.adventofcode.Puzzle
-import scala.runtime.Arrays
 
 object Day08 extends Puzzle[Array[Array[Int]], Int] {
   def readInput(): Array[Array[Int]] = {
